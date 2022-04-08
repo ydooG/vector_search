@@ -1,0 +1,15 @@
+body {
+    align-content: center;
+    background-color: aliceblue;
+}
+
+.content {
+    padding: 8px 16px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 500px;
+}
+
+.form-outline {
+    width: 800px;
+}

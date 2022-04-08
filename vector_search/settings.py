@@ -1,4 +1,7 @@
+import json
 from pathlib import Path
+
+from search.inverted_index import InvertedIndex
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -15,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'search'
 ]
 
 MIDDLEWARE = [
@@ -81,3 +85,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+with open(BASE_DIR / 'vector_space.json', mode='r') as file:
+    VECTOR_SPACE = json.loads(file.read())
+
+INVERTED_INDEX = InvertedIndex()
